@@ -1,0 +1,5 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/InjectedLayers/FileInjectedLayer/=BBF84B1C4481264780D4DA78FF3E5CDE/AbsolutePath/@EntryValue">\\winfabfs\public\ReSharper\Settings\WinFabReSharperSampleSettings.DotSettings</s:String>
+	<s:Boolean x:Key="/Default/Environment/InjectedLayers/FileInjectedLayer/=BBF84B1C4481264780D4DA78FF3E5CDE/@KeyIndexDefined">True</s:Boolean>
+	<s:Boolean x:Key="/Default/Environment/InjectedLayers/InjectedLayerCustomization/=FileBBF84B1C4481264780D4DA78FF3E5CDE/@KeyIndexDefined">True</s:Boolean>
+	<s:Double x:Key="/Default/Environment/InjectedLayers/InjectedLayerCustomization/=FileBBF84B1C4481264780D4DA78FF3E5CDE/RelativePriority/@EntryValue">1</s:Double></wpf:ResourceDictionary>
