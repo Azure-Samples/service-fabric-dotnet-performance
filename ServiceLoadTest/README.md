@@ -124,7 +124,7 @@ Documentation for creating a Service Fabric cluster via an ARM template is avail
 
   Once created, the cluster will be visible in the portal as shown in the screenshot below.
 
-    ![Cluster in portal][8]
+  ![Cluster in portal][8]
 
   Note that the cluster has two node types LoadGen and LoadTgt for the load generation service and target service respectively.
 
