@@ -18,6 +18,7 @@ The sample consists of the following components:
 
 ### Overall flow of the test
 A test consists of the following sequence of events:
+
 1. Test management client sends instructions to each of the load generator clients to start sending requests to the target service.
 
   ![Test sequence step1][1]
