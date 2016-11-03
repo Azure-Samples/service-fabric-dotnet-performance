@@ -18,7 +18,7 @@ namespace SfActor
     ///  - Volatile: State is kept in memory only and replicated.
     ///  - None: State is kept in memory only and not replicated.
     /// </remarks>
-    [StatePersistence(StatePersistence.Persisted)]
+    [StatePersistence(StatePersistence.None)]
     internal class SfActor : Actor, ISfActor
     {
         private const string StateName = "data";

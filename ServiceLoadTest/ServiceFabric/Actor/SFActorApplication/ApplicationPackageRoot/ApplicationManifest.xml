@@ -2,8 +2,8 @@
 <ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="SFActorApplicationType" ApplicationTypeVersion="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
   <Parameters>
     <Parameter Name="SfActorService_PartitionCount" DefaultValue="1" />
-    <Parameter Name="SfActorService_MinReplicaSetSize" DefaultValue="2" />
-    <Parameter Name="SfActorService_TargetReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="SfActorService_MinReplicaSetSize" DefaultValue="1" />
+    <Parameter Name="SfActorService_TargetReplicaSetSize" DefaultValue="1" />
   </Parameters>
   <!-- Import the ServiceManifest from the ServicePackage. The ServiceManifestName and ServiceManifestVersion 
        should match the Name and Version attributes of the ServiceManifest element defined in the 
@@ -12,7 +12,7 @@
     <ServiceManifestRef ServiceManifestName="SFActorPkg" ServiceManifestVersion="1.0.0" />
   </ServiceManifestImport>
   <DefaultServices>
-    <Service Name="SfActorService" GeneratedIdRef="d4cb4be7-0685-4612-a8fc-8059ea44d4d7|Persisted">
+    <Service Name="SfActorService" GeneratedIdRef="3eecf231-0eb6-4d56-a538-e4000909f7b2|None">
       <StatefulService ServiceTypeName="SfActorServiceType" TargetReplicaSetSize="[SfActorService_TargetReplicaSetSize]" MinReplicaSetSize="[SfActorService_MinReplicaSetSize]">
         <UniformInt64Partition PartitionCount="[SfActorService_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
       </StatefulService>
