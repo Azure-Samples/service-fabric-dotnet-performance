@@ -6,6 +6,7 @@
 namespace SfActor
 {
     using System.Threading.Tasks;
+    using Microsoft.ServiceFabric.Actors;
     using Microsoft.ServiceFabric.Actors.Runtime;
     using SfActorInterface;
 
@@ -21,6 +22,11 @@ namespace SfActor
     internal class SfActor : Actor, ISfActor
     {
         private const string StateName = "data";
+
+        public SfActor(ActorService actorService, ActorId actorId)
+            : base(actorService, actorId)
+        {
+        }
 
         Task<byte[]> ISfActor.GetDataAsync()
         {
