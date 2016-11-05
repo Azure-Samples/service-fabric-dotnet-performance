@@ -13,7 +13,7 @@ namespace SfActor
         private static void Main()
         {
             ActorRuntime.RegisterActorAsync<SfActor>(
-                (context, actorType) => new ActorService(context, actorType, () => new SfActor())).GetAwaiter().GetResult();
+                (context, actorType) => new ActorService(context, actorType)).GetAwaiter().GetResult();
 
             // Prevents this host process from terminating so services keep running.
             Thread.Sleep(Timeout.Infinite);
