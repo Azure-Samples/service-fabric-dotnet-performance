@@ -281,7 +281,7 @@
         },
         "nt1InstanceCount": {
             "type": "int",
-            "defaultValue": 2,
+            "defaultValue": 3,
             "metadata": {
                 "description": "Instance count for node type"
             }

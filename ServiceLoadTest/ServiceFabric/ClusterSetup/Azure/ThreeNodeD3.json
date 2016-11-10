@@ -281,7 +281,7 @@
         },
         "nt1InstanceCount": {
             "type": "int",
-            "defaultValue": 4,
+            "defaultValue": 3,
             "metadata": {
                 "description": "Instance count for node type"
             }
@@ -293,7 +293,7 @@
         },
         "vmNodeType1Size": {
             "type": "string",
-            "defaultValue": "Standard_D2_v2"
+            "defaultValue": "Standard_D3_v2"
         }
     },
     "variables": {
