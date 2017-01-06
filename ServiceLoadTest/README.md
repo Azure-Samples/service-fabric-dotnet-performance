@@ -58,6 +58,28 @@ The exact mechanism of sending a request to a target service is specific to that
 
 ![Request sender plugin][7]
 
+### How to interpret the results of the test
+The test consists of two phases:
+* _Write phase:_ During this phase the load generator clients send write requests to the service
+* _Read phase:_ During this phase the load generator clients send read requests to the service
+
+For each phase, the test prints out the following results:
+* _Average throughput:_ This is computed as the total number of requests sent by all of the load generator clients, divided by the total run time for the test.
+* _Average latency:_ The load generator client measures the latency of each individual request as the time elapsed between sending the request to the service and receiving the response back. The average latency that is printed out by the test is the average of the latencies of all the requests sent by all of the load generator clients.
+
+### Expected performance trends
+The hardware on which a service is deployed plays a very important role in how quickly a services is able to process requests from clients. In this context, the term hardware refers things like the number of machines on which the service is deployed, the specifications of those machines, the speed of the network connecting those machines etc.
+
+If the incoming volume of requests is under the level that the service can handle with the available hardware, then those requests will be processed quickly, i.e. the request latencies will be low. The throughput measured by the test in this scenario will be less than the peak throughput supported by the service, because incoming request volume is not high enough to saturate the service. An increase in incoming request volume will result in an increase in throughput.
+
+As the incoming request volume increases to approach the level that the service can handle, the request latencies start increasing gradually. The throughput measured by the test in this scenario will start to approach the peak throughput supported by the service, because the incoming request volume is high enough to start pushing the service towards its saturation point. An increase in incoming request volume will yield progressively diminishing increases in throughput because the service is approaching saturation.
+
+And when the incoming request volume exceeds the level that the service can handle, the service is saturated and the request latencies increase sharply. The throughput measured by the test is the peak throughput supported by the service. The service does not have the capacity to handle any more. An increase in incoming request volume will not result in increased throughput.
+
+The charts below illustrate the trends described above.
+
+![Expected trend][10]
+
 ## Projects in the sample
 The following table describes the projects in the sample.
 
@@ -290,3 +312,4 @@ In the sample, the test management client application is implemented by the Serv
 [7]: ./media/RequestSenderPlugin.png
 [8]: ./media/ClusterPortal.png
 [9]: ./media/BuildAndPackage.png
+[10]: ./media/ExpectedTrend.png
