@@ -1,7 +1,7 @@
 ---
 services: service-fabric
 platforms: dotnet
-author: Abhishek Ram
+author: abhishekram
 ---
 
 # Performance testing for Service Fabric reliable actors

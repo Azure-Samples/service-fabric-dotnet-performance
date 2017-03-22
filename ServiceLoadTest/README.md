@@ -1,7 +1,7 @@
 ---
 services: service-fabric
 platforms: dotnet
-author: Abhishek Ram
+author: abhishekram
 ---
 
 # Service Load Test Sample
