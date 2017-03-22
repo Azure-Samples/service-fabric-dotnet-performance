@@ -11,7 +11,6 @@ namespace SfDictionaryService
     using System.Threading.Tasks;
     using Microsoft.ServiceFabric.Data;
     using Microsoft.ServiceFabric.Data.Collections;
-    using Microsoft.ServiceFabric.Services.Communication.FabricTransport.Runtime;
     using Microsoft.ServiceFabric.Services.Communication.Runtime;
     using Microsoft.ServiceFabric.Services.Remoting.FabricTransport.Runtime;
     using Microsoft.ServiceFabric.Services.Runtime;
@@ -73,7 +72,7 @@ namespace SfDictionaryService
             return new FabricTransportServiceRemotingListener(
                 context,
                 this,
-                new FabricTransportListenerSettings()
+                new FabricTransportRemotingListenerSettings()
                 {
                     EndpointResourceName = ServiceEndpointResourceName
                 });
