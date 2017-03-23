@@ -1,7 +1,7 @@
 ---
 services: service-fabric
 platforms: dotnet
-author: Abhishek Ram
+author: abhishekram
 ---
 
 # Service Fabric Performance and Scalability samples
