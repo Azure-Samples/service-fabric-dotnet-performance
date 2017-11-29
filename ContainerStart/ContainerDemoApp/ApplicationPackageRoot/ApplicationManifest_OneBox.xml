@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="ContainerDemoAppType" ApplicationTypeVersion="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+  <Parameters>
+    <Parameter Name="WebFront_InstanceCount" DefaultValue="1" />
+    <Parameter Name="WebFront_ReportIntervalInSeconds" DefaultValue="5" />
+    <Parameter Name="WebFront_FuzzIntervalInSeconds" DefaultValue="10" />
+    <Parameter Name="WebFront_ExpirationIntervalInSeconds" DefaultValue="20" />
+    <Parameter Name="ContainerAggregatorActorService_PartitionCount" DefaultValue="1" />
+    <Parameter Name="ContainerAggregatorActorService_MinReplicaSetSize" DefaultValue="1" />
+    <Parameter Name="ContainerAggregatorActorService_TargetReplicaSetSize" DefaultValue="1" />
+    <Parameter Name="ContainerAggregatorActorService_FuzzIntervalInSeconds" DefaultValue="10" />
+    <Parameter Name="ContainerAggregatorActorService_ExpirationIntervalInSeconds" DefaultValue="20" />
+  </Parameters>
+  <!-- Import the ServiceManifest from the ServicePackage. The ServiceManifestName and ServiceManifestVersion 
+       should match the Name and Version attributes of the ServiceManifest element defined in the 
+       ServiceManifest.xml file. -->
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="WebFrontPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides>
+      <ConfigOverride Name="Config">
+        <Settings>
+          <Section Name="LivenessCounterSettings">
+            <Parameter Name="ReportIntervalInSeconds" Value="[WebFront_ReportIntervalInSeconds]" />
+            <Parameter Name="FuzzIntervalInSeconds" Value="[WebFront_FuzzIntervalInSeconds]" />
+            <Parameter Name="ExpirationIntervalInSeconds" Value="[WebFront_ExpirationIntervalInSeconds]" />
+          </Section>
+        </Settings>
+      </ConfigOverride>
+    </ConfigOverrides>
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="ContainerAggregatorPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides>
+      <ConfigOverride Name="Config">
+        <Settings>
+          <Section Name="LivenessCounterSettings">
+            <Parameter Name="FuzzIntervalInSeconds" Value="[ContainerAggregatorActorService_FuzzIntervalInSeconds]" />
+            <Parameter Name="ExpirationIntervalInSeconds" Value="[ContainerAggregatorActorService_ExpirationIntervalInSeconds]" />
+          </Section>
+        </Settings>
+      </ConfigOverride>
+    </ConfigOverrides>
+  </ServiceManifestImport>
+  <DefaultServices>
+    <Service Name="ContainerAggregatorActorService" GeneratedIdRef="b3c9f058-e5d9-47a8-8fb1-ad5387f3a73f|None">
+      <StatefulService ServiceTypeName="ContainerAggregatorActorServiceType" TargetReplicaSetSize="[ContainerAggregatorActorService_TargetReplicaSetSize]" MinReplicaSetSize="[ContainerAggregatorActorService_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[ContainerAggregatorActorService_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+        <!--<PlacementConstraints>(NodeType==sf)</PlacementConstraints>-->
+      </StatefulService>      
+    </Service>
+    <Service Name="WebFrontService">
+      <StatelessService ServiceTypeName="WebFrontType" InstanceCount="[WebFront_InstanceCount]">
+        <SingletonPartition/>
+        <PlacementConstraints>(NodeType!=sf)</PlacementConstraints>
+      </StatelessService>
+    </Service>
+    <!-- The section below creates instances of service types, when an instance of this 
+         application type is created. You can also create one or more instances of service type using the 
+         ServiceFabric PowerShell module.
+         
+         The attribute ServiceTypeName below must match the name defined in the imported ServiceManifest.xml file. -->
+  </DefaultServices>
+</ApplicationManifest>

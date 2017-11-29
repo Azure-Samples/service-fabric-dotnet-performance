@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Settings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+  <Section Name="ContainerAggregatorActorServiceReplicatorConfig">
+    <Parameter Name="ReplicatorEndpoint" Value="ContainerAggregatorActorServiceReplicatorEndpoint" />
+    <Parameter Name="BatchAcknowledgementInterval" Value="0.005" />
+  </Section>
+  <Section Name="ContainerAggregatorActorServiceReplicatorSecurityConfig">
+    <Parameter Name="CredentialType" Value="None" />
+  </Section>
+  <Section Name="LivenessCounterSettings">
+    <Parameter Name="ExpirationIntervalInSeconds" Value="30" />
+    <Parameter Name="FuzzIntervalInSeconds" Value="5" />
+  </Section>
+  <!-- The content will be generated during build -->
+</Settings>
