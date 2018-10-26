@@ -13,6 +13,7 @@ namespace SfDictionaryService
     using Microsoft.ServiceFabric.Data.Collections;
     using Microsoft.ServiceFabric.Services.Communication.Runtime;
     using Microsoft.ServiceFabric.Services.Remoting.FabricTransport.Runtime;
+    using Microsoft.ServiceFabric.Services.Remoting.V1.FabricTransport.Runtime;
     using Microsoft.ServiceFabric.Services.Runtime;
     using SfDictionaryInterface;
 

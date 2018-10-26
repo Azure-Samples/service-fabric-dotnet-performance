@@ -47,8 +47,8 @@
     <Compile Include="RetriableOperationFailedException.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System.Fabric, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=AMD64">
-      <HintPath>..\..\packages\Microsoft.ServiceFabric.5.1.163\lib\net45\System.Fabric.dll</HintPath>
+    <Reference Include="System.Fabric, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=AMD64">
+      <HintPath>..\..\..\packages\Microsoft.ServiceFabric.6.3.187\lib\net452\System.Fabric.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
