@@ -1,7 +1,9 @@
 ---
-services: service-fabric
-platforms: dotnet
-author: abhishekram
+languages:
+- csharp
+products:
+- azure
+topic: sample
 ---
 
 # Service Fabric Performance and Scalability samples
