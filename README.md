@@ -4,6 +4,7 @@ languages:
 products:
 - azure
 topic: sample
+description: "Samples to illustrate the performance and scalability of Service Fabric."
 ---
 
 # Service Fabric Performance and Scalability samples
