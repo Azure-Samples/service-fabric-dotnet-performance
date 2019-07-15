@@ -3,7 +3,7 @@ languages:
 - csharp
 products:
 - azure
-topic: sample
+page_type: sample
 description: "Samples to illustrate the performance and scalability of Service Fabric."
 ---
 
